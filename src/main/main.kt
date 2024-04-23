@@ -1,40 +1,57 @@
 import main.calculator.Calculator
+//import main.exception.CustomException
+
+//inline fun <reified T : Enum<T>> stringToOperators(type: String, default: T): T {
+//    return try {
+//        java.lang.Enum.valueOf(T::class.java, type)
+//    } catch (e: IllegalArgumentException) {
+//        default
+//    }
+//}
 
 fun main(){
     println("계산기 프로그램에 오신걸 환영합니다!!")
-
     while(true){
-        println()
-        println("음수부호와 정수는 반드시 숫자와 붙여서 작성하세요.")
-        println("마찬가지로 소숫점의 앞뒤가 비어있어서는 안됩니다.")
-        println("올바른 예\n1. (-2.5)\n2. -2.5")
-        println("틀린 예\n1. (- 2. 5)\n2. - 2 . 5\n3. -      2 .\n")
 
-        print("수식을 입력하세요: ")
-        val input = readLine()!!
-
-        var postfix_stack: ArrayList<String> = toPostfix(input)
-        println(postfix_stack)
-
-        var idx: Int = 2
-        var current: String
-        while(postfix_stack.size > 1){
-            current = postfix_stack[idx]
-            if((current == "*") || (current == "/") || (current == "+") || (current == "-")){
-                postfix_stack.removeAt(idx)
-
-                val b = postfix_stack.removeAt(idx - 1).toFloat()
-                val a = postfix_stack.removeAt(idx - 2).toFloat()
-
-                postfix_stack.add(idx - 2, Calculator(a, b, current).calculate().toString())
-
-                idx = 2
-            }
-            else{
-                idx += 1
+        var a: Float
+        while(true) {
+            println("첫 수 a를 입력해주세요!")
+            try {
+                a = readLine()!!.toFloat()
+                break
+            } catch (e: NumberFormatException) {
+                println("잘못된 인수입니다. 다시 입력하세요!")
+                continue
             }
         }
 
-        println("$input = ${postfix_stack[0]}")
+        var b: Float
+        while(true) {
+            println("두번째 수 b를 입력해주세요!")
+            try {
+                b = readLine()!!.toFloat()
+                break
+            }
+            catch (e: NumberFormatException){
+                println("잘못된 인수입니다. 다시 입력하세요!")
+                continue
+            }
+        }
+
+        var operator: Operators
+        while(true) {
+            println("무슨 연산을 하실건가요?")
+            println("1. ADD (덧셈), 2. SUB (뺄셈) 3. MULTI (곱셈) 4. DIV (나누기) 5. REM (나머지연산)")
+            try{
+                operator = Operators.valueOf(readLine()!!)
+                break
+            }
+            catch (e: Exception){
+                println("잘못된 인수입니다. 다시 입력하세요!")
+                continue
+            }
+        }
+
+        println(Calculator(a, b, operator).calculate())
     }
 }

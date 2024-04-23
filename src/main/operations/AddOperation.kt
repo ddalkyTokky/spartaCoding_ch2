@@ -1,8 +1,10 @@
 package main.operations
 
-class AddOperation(val a: Float, val b: Float): OperationInterface {
+import AbstractOperation
+
+class AddOperation(a: Float, b: Float): AbstractOperation(a, b) {
     override fun operate(): Float {
-//        print("$a + $b = ")
+        print("$a + $b = ")
         return a + b
     }
 }
