@@ -1,4 +1,4 @@
-inline fun stringToOpenum(str:String): OperatorsEnum{
+inline fun symbolToOpenum(str:String): OperatorsEnum{
     for(openum in OperatorsEnum.values()){
         if(openum.symbol.toString().equals(str)){
             return openum

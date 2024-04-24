@@ -1,5 +1,5 @@
 import main.calculator.Calculator
-import main.postfix.Postfix
+import main.postfix.stringToPostfix
 
 fun main(){
     println("계산기 프로그램에 오신걸 환영합니다!!")
@@ -14,7 +14,7 @@ fun main(){
         print("수식을 입력하세요: ")
         val input = readLine() ?: ""
 
-        var postfix: MutableList<String> = Postfix().stringToPostfix(input)
+        var postfix: MutableList<String> = stringToPostfix(input)
         println("this is your postfix stack: $postfix")
 
         var idx: Int = 2
