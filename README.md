@@ -30,12 +30,7 @@ mutableListOf\<**String**\>() => mutableListOf\<**Any**\>()
 
 ## C. inline package
 
-### C-1. floatOrOp.kt
-문자열이 정수변환이 가능한지 판단한다.
-정수변환이 가능 : true
-정수변환 불가능 : false
-
-### C-2. symbolToOpenum.kt
+### C-1. symbolToOpenum.kt
 문자열로 된 연산자 심볼을 OperatorsEnum 타입으로 바꾼다.              
 OperatorsEnum.symbol 중 문자열과 매칭하는 것이 있을때 : 해당 OperatorsEnum 반환              
 OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsEnum.UNKNOWN 반환              
