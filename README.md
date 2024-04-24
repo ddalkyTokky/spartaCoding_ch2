@@ -39,7 +39,7 @@ OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsE
 String을 받아 infix MutableList를 반환한다.           
 정말 순수하게 반복문 문자열 parsing 알고리즘이다. 이 이상 설명할 말이 없다..            
 몇 가지 특징을 꼽을 수는 있는데, 다음과 같다.            
-#### var lastInser: Boolean = false
+#### var lastInsert: Boolean = false
 해당 변수는 '-'가 등장했을때, 음수부호인지, 연산자인지를 판단하기 위한 것이다.            
 '-' 부호 이전에 온것이 - + * / ( 중 하나라면 음수부호이다.            
 '-' 부호 이전에 온것이 0 ~ 9 ) 중 하나라면 연산자이다.            
