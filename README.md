@@ -40,7 +40,7 @@
 
 ---
 ### 3-3-2. symbolToOpenum
-**문자열로 된 연산자 심볼을 OperatorsEnum 타입으로 바꾼다.
-OperatorsEnum.symbol 중 문자열과 매칭하는 것이 있을때 : 해당 OperatorsEnum 반환
-OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsEnum.UNKNOWN 반환**
+**문자열로 된 연산자 심볼을 OperatorsEnum 타입으로 바꾼다.**              
+**OperatorsEnum.symbol 중 문자열과 매칭하는 것이 있을때 : 해당 OperatorsEnum 반환**              
+**OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsEnum.UNKNOWN 반환**              
 
