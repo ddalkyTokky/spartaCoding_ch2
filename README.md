@@ -18,6 +18,7 @@
 ### 3-2-1. calculator.Calculator
 **만들어진 Operations 패키지를 사용해 두수 연산을 진행하는 파일이다.**
 ![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/e4f255e8-cea0-45a2-b25d-b666eeded58a)
+
 ---
 ### 3-2-2. calculator.OperatorsEnum
 각 연산자의 심볼과 우선순위를 나열한 Enum Class이다.
