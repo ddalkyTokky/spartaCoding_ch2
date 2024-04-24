@@ -1,3 +1,7 @@
+# v1.0.1 변경점
+Any 객체의 도입
+mutableListOf<String>() => mutableListOf<Any>()
+
 # 1. 결과화면
 
 ![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/ee774188-2ed7-4552-a03a-4a357db43dab)
