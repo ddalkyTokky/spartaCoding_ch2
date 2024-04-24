@@ -50,6 +50,8 @@ String을 받아 infix MutableList를 반환한다.
 #### var numberFound: Boolean = false
 숫자인 문자를 발견하여 숫자를 기록중이었는지 나타낸다.            
 숫자가 끝나면 기록된 문자열을 infix 에 넣는다.            
+#### + - * / ( ) 를 OperatorsEnum으로!
+각종 연산부호들을 위에서 정의했던 OperatorsEnum으로 바꾸어서 저장한다.
 
 ### D-2. infixToPostfix.kt
 infix MutableList을 받아 postfix MutableList를 반환한다.           
