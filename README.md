@@ -62,3 +62,7 @@ infix MutableList을 받아 postfix MutableList를 반환한다.
 6. 여는 괄호는 스택에 그냥 추가한다.
 7. 닫는 괄호는 여는 괄호가 나올 때까지 스택을 pop 하여 출력한다. 다 출력하고 난 뒤 괄호들은 버린다.
 8. 모든 수식을 다 사용했다면 스택이 빌 때까지 pop하여 출력한다.
+
+### D-3. stringToPostfix.kt
+string을 받아 postfix MutableList를 반환한다.
+위 두 함수를 그대로 사용한다.
