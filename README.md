@@ -3,6 +3,10 @@
 mutableListOf\<**String**\>() => mutableListOf\<**Any**\>()                
 2. stringToInfix.kt 에서부터 모든 연산자는 OperatorsEnum 타입으로 바뀌어서 쌓입니다.               
 (기존에는 연산자를 Char 그대로 삽입)
+3. ### C-1. ~~floatOrOp.kt~~ 삭제
+~~문자열이 정수변환이 가능한지 판단한다.~~
+~~정수변환이 가능 : true~~
+~~정수변환 불가능 : false~~
 
 # 1. 결과화면
 
