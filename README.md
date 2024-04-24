@@ -66,3 +66,10 @@ infix MutableList을 받아 postfix MutableList를 반환한다.
 ### D-3. stringToPostfix.kt
 string을 받아 postfix MutableList를 반환한다.
 위 두 함수를 그대로 사용한다.
+
+# 4. main.kt
+위 모든 패키지들을 활용하여 입력값을 postfix MutableList로 바꾼다음, 연산을 진행한다.           
+1. 리스트 가장 앞에 오는 연산자를 찾는다. (연산자 리스트에서 제거)
+2. 연산자 바로 앞 두 수를 연산자를 이용해 연산한다. (두 수 리스트에서 제거)
+3. 연산 결과를 다시 넣는다 (두 수 중 앞 수가 위치했던 인덱스에 삽입)
+4. 리스트가 3개 미만의 길이를 가지게 되면 중단
