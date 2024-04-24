@@ -1,7 +1,7 @@
 package main.postfix
 
-fun stringToPostfix(input: String): MutableList<String>{
-    val infix: MutableList<String> = stringToInfix(input)
+fun stringToPostfix(input: String): MutableList<Any>{
+    val infix: MutableList<Any> = stringToInfix(input)
 
     println("this is your infix stack: $infix")
 

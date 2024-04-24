@@ -1,7 +1,9 @@
 package main.postfix
 
-fun stringToInfix(input: String): MutableList<String> {
-    var infix = mutableListOf<String>()
+import symbolToOpenum
+
+fun stringToInfix(input: String): MutableList<Any> {
+    var infix = mutableListOf<Any>()
 
     // ture: 마지막으로 push 된것: -, +, *, /, (
     // false: 마지막으로 push 된것: 0 ~ 9, )
@@ -14,7 +16,7 @@ fun stringToInfix(input: String): MutableList<String> {
         if(ch == ' '){
             if(numberFound){
                 numberFound = false
-                infix.add(string_number)
+                infix.add(string_number.toFloat())
                 string_number = ""
                 lastInsert = false
             }
@@ -30,7 +32,7 @@ fun stringToInfix(input: String): MutableList<String> {
         else if(ch == '-'){
             if (numberFound) {
                 numberFound = false
-                infix.add(string_number)
+                infix.add(string_number.toFloat())
                 string_number = ""
                 lastInsert = false
             }
@@ -40,28 +42,28 @@ fun stringToInfix(input: String): MutableList<String> {
                 lastInsert = false
             }
             else {
-                infix.add(ch.toString())
+                infix.add(symbolToOpenum(ch))
                 lastInsert = true
             }
         }
         else if((ch == '+') || (ch == '*') || (ch == '/') || (ch == '(')){
             if(numberFound){
                 numberFound = false
-                infix.add(string_number)
+                infix.add(string_number.toFloat())
                 string_number = ""
             }
 
-            infix.add(ch.toString())
+            infix.add(symbolToOpenum(ch))
             lastInsert = true
         }
         else if(ch == ')'){
             if(numberFound){
                 numberFound = false
-                infix.add(string_number)
+                infix.add(string_number.toFloat())
                 string_number = ""
             }
 
-            infix.add(ch.toString())
+            infix.add(symbolToOpenum(ch))
             lastInsert = false
         }
         else{
@@ -69,7 +71,7 @@ fun stringToInfix(input: String): MutableList<String> {
         }
     }
     if(string_number != ""){
-        infix.add(string_number)
+        infix.add(string_number.toFloat())
     }
     return infix
 }

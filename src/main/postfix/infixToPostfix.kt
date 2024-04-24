@@ -1,38 +1,34 @@
 package main.postfix
 
 import OperatorsEnum
-import floatOrOp
-import symbolToOpenum
 
-fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
-    var postifx = mutableListOf<String>()
-    var stack = mutableListOf<String>()
+fun infixToPostfix(infix: MutableList<Any>): MutableList<Any>{
+    var postifx = mutableListOf<Any>()
+    var stack = mutableListOf<OperatorsEnum>()
 
     val current = infix.iterator()
 
     while(current.hasNext()){
-        val value: String = current.next()
+        val value: Any = current.next()
 
-        if(floatOrOp(value)){
+        if(value is Float){
             postifx.add(value)
         }
         else{
-            val op: OperatorsEnum = symbolToOpenum(value)
-
-            if(OperatorsEnum.OPEN_PAREN.equals(op)){
-                stack.add(op.toString())
+            if(OperatorsEnum.OPEN_PAREN.equals(value)){
+                stack.add(value as OperatorsEnum)
             }
-            else if(OperatorsEnum.CLOSE_PAREN.equals(op)){
-                while(!OperatorsEnum.valueOf(stack.last()).equals(OperatorsEnum.OPEN_PAREN)){
+            else if(OperatorsEnum.CLOSE_PAREN.equals(value)){
+                while(!OperatorsEnum.OPEN_PAREN.equals(stack.last())){
                     postifx.add(stack.removeAt(stack.lastIndex))
                 }
                 stack.removeAt(stack.lastIndex)
             }
             else {
                 if (stack.isEmpty()) {
-                    stack.add(op.toString())
+                    stack.add(value as OperatorsEnum)
                 } else {
-                    while(op.priority >= OperatorsEnum.valueOf(stack.last()).priority) {
+                    while((value as OperatorsEnum).priority >= stack.last().priority) {
 
                         postifx.add(stack.removeAt(stack.lastIndex))
 
@@ -40,7 +36,7 @@ fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
                             break
                         }
                     }
-                    stack.add(op.toString())
+                    stack.add(value)
                 }
             }
         }

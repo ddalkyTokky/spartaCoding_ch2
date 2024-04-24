@@ -1,6 +1,6 @@
-inline fun symbolToOpenum(str:String): OperatorsEnum{
-    for(openum in OperatorsEnum.values()){
-        if(openum.symbol.toString().equals(str)){
+inline fun symbolToOpenum(ch: Char): OperatorsEnum{
+    for(openum in OperatorsEnum.entries){
+        if(openum.symbol.equals(ch)){
             return openum
         }
     }

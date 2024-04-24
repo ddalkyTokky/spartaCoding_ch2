@@ -14,20 +14,20 @@ fun main(){
         print("수식을 입력하세요: ")
         val input = readLine() ?: ""
 
-        var postfix: MutableList<String> = stringToPostfix(input)
+        var postfix: MutableList<Any> = stringToPostfix(input)
         println("this is your postfix stack: $postfix")
 
         var idx: Int = 2
         while(postfix.size > 2){
             val value = postfix[idx]
 
-            if(!floatOrOp(value)){
+            if(value is OperatorsEnum){
                 postfix.removeAt(idx)
 
-                val b = postfix.removeAt(idx - 1).toFloat()
-                val a = postfix.removeAt(idx - 2).toFloat()
+                val b = postfix.removeAt(idx - 1) as Float
+                val a = postfix.removeAt(idx - 2) as Float
 
-                postfix.add(idx - 2, Calculator(a, b, OperatorsEnum.valueOf(value)).calculate().toString())
+                postfix.add(idx - 2, Calculator(a, b, value).calculate())
 
                 idx = 2
             }
@@ -38,4 +38,13 @@ fun main(){
 
         println("$input = ${postfix[0]}")
     }
+}
+
+private fun Any.toOperatorsEnum(): OperatorsEnum {
+    for(openum in OperatorsEnum.entries){
+        if(openum.symbol.equals(this as Char)){
+            return openum
+        }
+    }
+    return OperatorsEnum.UNKNOWN
 }
