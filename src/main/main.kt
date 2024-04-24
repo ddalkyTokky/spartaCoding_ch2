@@ -39,12 +39,3 @@ fun main(){
         println("$input = ${postfix[0]}")
     }
 }
-
-private fun Any.toOperatorsEnum(): OperatorsEnum {
-    for(openum in OperatorsEnum.entries){
-        if(openum.symbol.equals(this as Char)){
-            return openum
-        }
-    }
-    return OperatorsEnum.UNKNOWN
-}
