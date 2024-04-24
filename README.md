@@ -18,7 +18,7 @@
 ## 3-2. calculator
 ### 3-2-1. calculator.Calculator
 
-![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/9ad5d274-be26-4a96-975e-e2d4d6664cfa)
+![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/e4f255e8-cea0-45a2-b25d-b666eeded58a)
 
 만들어진 Operations 패키지를 사용해 두수 연산을 진행하는 파일이다.
 
