@@ -8,34 +8,34 @@
 
 # 3. 패키지설명
 
-## a. operations package
+## A. operations package
 아주 간단한 인터페이스와 두 수 연산을 진행하는 코드로 이루어진 패키지이다.
 
-## b. calculator package
-### b-1. calculator.Calculator.kt
+## B. calculator package
+### B-1. calculator.Calculator.kt
 만들어진 Operations 패키지를 사용해 두수 연산을 진행하는 파일이다.
 
-### b-2. calculator.OperatorsEnum.kt
+### B-2. calculator.OperatorsEnum.kt
 각 연산자의 심볼과 우선순위를 나열한 Enum Class이다.               
 심볼과 우선순위는 아래 부분에서 중요하게 사용된다.              
 1. string형식의 연산자 심볼과 해당 Enum을 매칭시킬때              
 2. Infix 를 Postfix로 바꾸면서 연산자의 우선순위를 고려할때              
 ![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/eb696501-7c98-4c86-bce6-481f75234b4f)
 
-## c. inline package
+## C. inline package
 
-### c-1. floatOrOp.kt
+### C-1. floatOrOp.kt
 문자열이 정수변환이 가능한지 판단한다.
 정수변환이 가능 : true
 정수변환 불가능 : false
 
-### c-2. symbolToOpenum.kt
+### C-2. symbolToOpenum.kt
 문자열로 된 연산자 심볼을 OperatorsEnum 타입으로 바꾼다.              
 OperatorsEnum.symbol 중 문자열과 매칭하는 것이 있을때 : 해당 OperatorsEnum 반환              
 OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsEnum.UNKNOWN 반환              
 
-## d. postfix package
-### d-1. stringToinfix.kt
+## D. postfix package
+### D-1. stringToinfix.kt
 String을 받아 infix MutableList를 반환한다.           
 정말 순수하게 반복문 문자열 parsing 알고리즘이다. 이 이상 설명할 말이 없다..            
 몇 가지 특징을 꼽을 수는 있는데, 다음과 같다.            
@@ -47,7 +47,7 @@ String을 받아 infix MutableList를 반환한다.
 숫자인 문자를 발견하여 숫자를 기록중이었는지 나타낸다.            
 숫자가 끝나면 기록된 문자열을 infix 에 넣는다.            
 
-### d-2. infixToPostfix.kt
+### D-2. infixToPostfix.kt
 infix MutableList을 받아 postfix MutableList를 반환한다.           
 규칙은 다음과 같다.
 
