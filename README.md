@@ -21,12 +21,12 @@
 
 ---
 ### 3-2-2. calculator.OperatorsEnum
-각 연산자의 심볼과 우선순위를 나열한 Enum Class이다.
-심볼과 우선순위는 아래 부분에서 중요하게 사용된다.
-
-1. string형식의 연산자 심볼과 해당 Enum을 매칭시킬때
-2. Infix 를 Postfix로 바꾸면서 연산자의 우선순위를 고려할때
+**각 연산자의 심볼과 우선순위를 나열한 Enum Class이다.**
+**심볼과 우선순위는 아래 부분에서 중요하게 사용된다.**
+**1. string형식의 연산자 심볼과 해당 Enum을 매칭시킬때**
+**2. Infix 를 Postfix로 바꾸면서 연산자의 우선순위를 고려할때**
 ![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/eb696501-7c98-4c86-bce6-481f75234b4f)
+
 ---
 
 ## 3-3. inline
