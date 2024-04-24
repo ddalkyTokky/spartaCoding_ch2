@@ -9,9 +9,8 @@
 # 3. 패키지설명
 
 ## 3-1. operations
-![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/7d2e028b-a0ef-4fa7-bb28-b5df118cc41a)
-
 **아주 간단한 인터페이스와 두 수 연산을 진행하는 코드로 이루어진 패키지이다.**
+![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/7d2e028b-a0ef-4fa7-bb28-b5df118cc41a)
 
 ----
 
