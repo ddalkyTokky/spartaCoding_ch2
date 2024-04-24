@@ -9,8 +9,7 @@ mutableListOf\<**String**\>() => mutableListOf\<**Any**\>()
 ~~정수변환 불가능 : false~~             
 
 # 1. 결과화면
-
-![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/ee774188-2ed7-4552-a03a-4a357db43dab)
+![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/3e05a671-ec53-487b-8345-366ea223687a)
 
 # 2. 작동흐름
 
