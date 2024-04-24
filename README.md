@@ -1,6 +1,6 @@
 # v1.0.1 변경점
 1. Any 객체의 도입                
-mutableListOf<String>() => mutableListOf<Any>()                
+mutableListOf\<String\>() => mutableListOf\<Any\>()                
 2. stringToInfix.kt 에서부터 모든 연산자는 OperatorsEnum 타입으로 바뀌어서 쌓입니다.               
 (기존에는 연산자를 Char 그대로 삽입)
 
