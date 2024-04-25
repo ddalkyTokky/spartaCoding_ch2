@@ -1,23 +1,10 @@
 [PostFix v1.0.2 게시!](https://github.com/spartaCoding-2-4/ch2.SoonYong/tree/postFix_v1.0.2)
 
-### C-1. floatOrOp.kt
-문자열이 정수변환이 가능한지 판단한다.
-정수변환이 가능 : true
-정수변환 불가능 : false
-
-![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/ee774188-2ed7-4552-a03a-4a357db43dab)
-
-
 # [스파르타 코딩클럽 - 후위연산식과 계산기](https://strawberryrabbit.tistory.com/5)
 
-# 0. _**v1.0.2**_ 변경점
-1. Object Singleton 패턴 도입                
-class Calculator 에서               
-object Calculator 으로 변경                   
-Operations 패키지의 내용도 모두 Singleton으로 변경됨!
-
 # 1. 결과화면
-![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/3e05a671-ec53-487b-8345-366ea223687a)
+
+![image](https://github.com/spartaCoding-2-4/ch2.SoonYong/assets/47583083/ee774188-2ed7-4552-a03a-4a357db43dab)
 
 # 2. 작동흐름
 
@@ -44,7 +31,12 @@ Operations 패키지의 내용도 모두 Singleton으로 변경됨!
 ### C-1. symbolToOpenum.kt
 문자열로 된 연산자 심볼을 OperatorsEnum 타입으로 바꾼다.              
 OperatorsEnum.symbol 중 문자열과 매칭하는 것이 있을때 : 해당 OperatorsEnum 반환              
-OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsEnum.UNKNOWN 반환              
+OperatorsEnum.symbol 중 문자열과 매칭하는 것이 없을때 : OperatorsEnum.UNKNOWN 반환        
+
+### C-2. floatOrOp.kt
+문자열이 정수변환이 가능한지 판단한다.
+정수변환이 가능 : true
+정수변환 불가능 : false
 
 ## D. postfix package
 ### D-1. stringToinfix.kt
