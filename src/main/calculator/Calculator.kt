@@ -1,18 +1,21 @@
 package main.calculator
 
 import OperatorsEnum
-import main.operations.*
+import addOperation
+import divideOperation
+import multiplyOperation
+import substractOperation
 
 object Calculator {
     fun calculate(a: Float, b: Float, operator: OperatorsEnum): Float {
         if (OperatorsEnum.ADD.equals(operator)) {
-            return (AddOperation.operate(a, b))
+            return (addOperation.operate(a, b))
         } else if (OperatorsEnum.SUB.equals(operator)) {
-            return (SubstractOperation.operate(a, b))
+            return (substractOperation.operate(a, b))
         } else if (OperatorsEnum.MULTI.equals(operator)) {
-            return (MultiplyOperation.operate(a, b))
+            return (multiplyOperation.operate(a, b))
         } else if (OperatorsEnum.DIV.equals(operator)) {
-            return (DivideOperation.operate(a, b))
+            return (divideOperation.operate(a, b))
         } else {
             throw IllegalArgumentException("\n\nUnknown operator\n\n")
         }
