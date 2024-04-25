@@ -3,21 +3,17 @@ package main.calculator
 import OperatorsEnum
 import main.operations.*
 
-class Calculator(val a: Float, val b: Float, val operator: OperatorsEnum) {
-    fun calculate(): Float {
+object Calculator {
+    fun calculate(a: Float, b: Float, operator: OperatorsEnum): Float {
         if (OperatorsEnum.ADD.equals(operator)) {
-            return (AddOperation(a, b).operate())
-        }
-        else if (OperatorsEnum.SUB.equals(operator)) {
-            return (SubstractOperation(a, b).operate())
-        }
-        else if (OperatorsEnum.MULTI.equals(operator)) {
-            return (MultiplyOperation(a, b).operate())
-        }
-        else if (OperatorsEnum.DIV.equals(operator)) {
-            return (DivideOperation(a, b).operate())
-        }
-        else{
+            return (AddOperation.operate(a, b))
+        } else if (OperatorsEnum.SUB.equals(operator)) {
+            return (SubstractOperation.operate(a, b))
+        } else if (OperatorsEnum.MULTI.equals(operator)) {
+            return (MultiplyOperation.operate(a, b))
+        } else if (OperatorsEnum.DIV.equals(operator)) {
+            return (DivideOperation.operate(a, b))
+        } else {
             throw IllegalArgumentException("\n\nUnknown operator\n\n")
         }
     }

@@ -1,7 +1,7 @@
 package main.operations
 
-class MultiplyOperation(val a: Float, val b: Float): OperationInterface {
-    override fun operate(): Float {
+object MultiplyOperation: OperationInterface {
+    override fun operate(a: Float, b: Float): Float {
 //        print("$a * $b = ")
         return a * b
     }

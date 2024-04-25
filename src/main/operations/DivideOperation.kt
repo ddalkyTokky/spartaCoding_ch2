@@ -1,7 +1,7 @@
 package main.operations
 
-class DivideOperation(val a: Float, val b: Float): OperationInterface {
-    override fun operate(): Float {
+object DivideOperation: OperationInterface {
+    override fun operate(a: Float, b: Float): Float {
         if(b.equals(0.toFloat())){
             println("WARNING!!! Cannot divide by 0")
         }

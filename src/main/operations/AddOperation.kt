@@ -1,7 +1,7 @@
 package main.operations
 
-class AddOperation(val a: Float, val b: Float): OperationInterface {
-    override fun operate(): Float {
+object AddOperation: OperationInterface {
+    override fun operate(a: Float, b: Float): Float {
 //        print("$a + $b = ")
         return a + b
     }

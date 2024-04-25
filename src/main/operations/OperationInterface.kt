@@ -1,5 +1,5 @@
 package main.operations
 
 interface OperationInterface {
-    fun operate(): Float
+    fun operate(a: Float, b: Float): Float
 }

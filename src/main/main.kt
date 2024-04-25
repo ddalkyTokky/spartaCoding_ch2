@@ -4,6 +4,9 @@ import main.postfix.stringToPostfix
 fun main(){
     println("계산기 프로그램에 오신걸 환영합니다!!")
 
+    var list: MutableList<Any> = mutableListOf<Any>()
+
+    // (-2.3) / ( -0.2 + 33 * -8)
     while(true){
         println()
         println("음수부호와 정수는 반드시 숫자와 붙여서 작성하세요.")
@@ -27,7 +30,7 @@ fun main(){
                 val b = postfix.removeAt(idx - 1) as Float
                 val a = postfix.removeAt(idx - 2) as Float
 
-                postfix.add(idx - 2, Calculator(a, b, value).calculate())
+                postfix.add(idx - 2, Calculator.calculate(a, b, value))
 
                 idx = 2
             }
@@ -38,13 +41,4 @@ fun main(){
 
         println("$input = ${postfix[0]}")
     }
-}
-
-private fun Any.toOperatorsEnum(): OperatorsEnum {
-    for(openum in OperatorsEnum.entries){
-        if(openum.symbol.equals(this as Char)){
-            return openum
-        }
-    }
-    return OperatorsEnum.UNKNOWN
 }
