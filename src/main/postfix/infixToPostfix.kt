@@ -3,7 +3,7 @@ package main.postfix
 import OperatorsEnum
 
 fun infixToPostfix(infix: MutableList<Any>): MutableList<Any>{
-    var postifx = mutableListOf<Any>()
+    var postfix = mutableListOf<Any>()
     var stack = mutableListOf<OperatorsEnum>()
 
     val current = infix.iterator()
@@ -12,7 +12,7 @@ fun infixToPostfix(infix: MutableList<Any>): MutableList<Any>{
         val value: Any = current.next()
 
         if(value is Float){
-            postifx.add(value)
+            postfix.add(value)
         }
         else{
             if(OperatorsEnum.OPEN_PAREN.equals(value)){
@@ -20,7 +20,7 @@ fun infixToPostfix(infix: MutableList<Any>): MutableList<Any>{
             }
             else if(OperatorsEnum.CLOSE_PAREN.equals(value)){
                 while(!OperatorsEnum.OPEN_PAREN.equals(stack.last())){
-                    postifx.add(stack.removeAt(stack.lastIndex))
+                    postfix.add(stack.removeAt(stack.lastIndex))
                 }
                 stack.removeAt(stack.lastIndex)
             }
@@ -30,7 +30,7 @@ fun infixToPostfix(infix: MutableList<Any>): MutableList<Any>{
                 } else {
                     while((value as OperatorsEnum).priority >= stack.last().priority) {
 
-                        postifx.add(stack.removeAt(stack.lastIndex))
+                        postfix.add(stack.removeAt(stack.lastIndex))
 
                         if(stack.isEmpty()){
                             break
@@ -43,8 +43,8 @@ fun infixToPostfix(infix: MutableList<Any>): MutableList<Any>{
     }
 
     while(stack.isNotEmpty()){
-        postifx.add(stack.removeAt(stack.lastIndex))
+        postfix.add(stack.removeAt(stack.lastIndex))
     }
 
-    return postifx
+    return postfix
 }
