@@ -5,7 +5,7 @@ import floatOrOp
 import symbolToOpenum
 
 fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
-    var postifx = mutableListOf<String>()
+    var postfix = mutableListOf<String>()
     var stack = mutableListOf<String>()
 
     val current = infix.iterator()
@@ -14,7 +14,7 @@ fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
         val value: String = current.next()
 
         if(floatOrOp(value)){
-            postifx.add(value)
+            postfix.add(value)
         }
         else{
             val op: OperatorsEnum = symbolToOpenum(value)
@@ -24,7 +24,7 @@ fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
             }
             else if(OperatorsEnum.CLOSE_PAREN.equals(op)){
                 while(!OperatorsEnum.valueOf(stack.last()).equals(OperatorsEnum.OPEN_PAREN)){
-                    postifx.add(stack.removeAt(stack.lastIndex))
+                    postfix.add(stack.removeAt(stack.lastIndex))
                 }
                 stack.removeAt(stack.lastIndex)
             }
@@ -34,7 +34,7 @@ fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
                 } else {
                     while(op.priority >= OperatorsEnum.valueOf(stack.last()).priority) {
 
-                        postifx.add(stack.removeAt(stack.lastIndex))
+                        postfix.add(stack.removeAt(stack.lastIndex))
 
                         if(stack.isEmpty()){
                             break
@@ -47,8 +47,8 @@ fun infixToPostfix(infix: MutableList<String>): MutableList<String>{
     }
 
     while(stack.isNotEmpty()){
-        postifx.add(stack.removeAt(stack.lastIndex))
+        postfix.add(stack.removeAt(stack.lastIndex))
     }
 
-    return postifx
+    return postfix
 }
